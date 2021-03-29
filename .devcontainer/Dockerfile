@@ -13,6 +13,10 @@ COPY library-scripts/azcli-debian.sh /tmp/library-scripts/
 RUN if [ "$INSTALL_AZURE_CLI" = "true" ]; then bash /tmp/library-scripts/azcli-debian.sh; fi \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
+COPY library-scripts/kubectl-debian.sh /tmp/library-scripts/
+RUN bash /tmp/library-scripts/kubectl-debian.sh \
+     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
 # Install SQL Tools: SQLPackage and sqlcmd
 #COPY mssql/installSQLtools.sh installSQLtools.sh
 #RUN bash ./installSQLtools.sh \
