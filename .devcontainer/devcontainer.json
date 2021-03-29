@@ -6,25 +6,15 @@
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"mssql.connections": [
-			{
-				"server": "localhost,1433",
-				"database": "",
-				"authenticationType": "SqlLogin",
-				"user": "sa",
-				"password": "P@ssw0rd",
-				"emptyPasswordInput": false,
-				"savePassword": false,
-				"profileName": "mssql-container"
-			}
-		]
+		"terminal.integrated.shell.linux": "/bin/bash"		
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-dotnettools.csharp",
-		"ms-mssql.mssql"
+		"ms-mssql.mssql",
+		"ms-azuretools.vscode-azurestorage",
+		"ms-azuretools.vscode-azureterraform"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
